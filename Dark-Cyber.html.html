@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARK - CYBER</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #05070c;
+    --card: #0b1220;
+    --neon: #22d3ee;
+    --text-main: #ffffff;
+    --text-dim: #94a3b8;
+}
+
+* {
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+}
+
+/* Header Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    z-index: 100;
+}
+
+.webname {
+    color: var(--neon);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links div {
+    color: gray;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links div:hover {
+    color: var(--neon);
+}
+
+/* Hero Section */
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 150px 20px 100px;
+}
+
+.mainh {
+    color: var(--neon);
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.mainh:hover {
+    text-shadow: 0 0 4px var(--neon), 0 0 10px var(--neon);
+}
+
+.hp {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.viewwork {
+    background-color: black;
+    color: var(--neon);
+    border: 2px solid var(--neon);
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.viewwork:hover {
+    background-color: var(--neon);
+    color: black;
+}
+
+/* Skills Section */
+#skill {
+    text-align: center;
+    color: var(--neon);
+    margin-top: 100px;
+    font-size: 2rem;
+}
+
+.skill {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.skill div {
+    background-color: var(--card);
+    border-radius: 7px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.skill div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px #004a55;
+}
+
+.skillname {
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.skillpara {
+    color: gray;
+    font-size: 0.85rem;
+}
+
+/* Projects Section */
+#project {
+    text-align: center;
+    color: var(--neon);
+    margin-top: 100px;
+    font-size: 2rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.projects div {
+    background-color: var(--card);
+    border-radius: 7px;
+    padding: 20px;
+    height: 140px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.projects div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px #004a55;
+}
+
+.projecthead {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.projectpara {
+    color: gray;
+    font-size: 0.85rem;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    color: var(--neon);
+    margin-top: 100px;
+    font-size: 2rem;
+}
+
+.work {
+    color: gray;
+    margin: 15px auto; /* centers horizontally */
+    text-align: center; /* keeps text centered */
+}
+
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.email, .GitHub {
+    border: 2px solid var(--neon);
+    color: var(--neon);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email:hover, .GitHub:hover {
+    background-color: var(--neon);
+    color: black;
+}
+
+/* Footer */
+.end {
+    text-align: center;
+    color: gray;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .skill {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mainh {
+        font-size: 2rem;
+    }
+    .hp {
+        font-size: 0.9rem;
+    }
+    .skill {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .options {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mainh {
+        font-size: 1.6rem;
+    }
+    .hp {
+        font-size: 0.8rem;
+    }
+    #skill, #project, #contact {
+        font-size: 1.5rem;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+    <div class="webname">DarkCyber</div>
+    <div class="nav-links">
+        <div>Skills</div>
+        <div>Projects</div>
+        <div>Contact</div>
+    </div>
+</div>
+
+<div class="head">
+    <h1 class="mainh">Hi, I'm a Web Developer</h1>
+    <div class="hp">Wanna check out my work? ↓</div>
+    <div class="viewwork">View my Work</div>
+</div>
+
+<h2 id="skill">Skills</h2>
+<div class="skill">
+    <div>
+        <h4 class="skillname">HTML</h4>
+        <p class="skillpara">Semantic, structured markup</p>
+    </div>
+    <div>
+        <h4 class="skillname">CSS</h4>
+        <p class="skillpara">Layouts, animations, design systems</p>
+    </div>
+    <div>
+        <h4 class="skillname">Responsive</h4>
+        <p class="skillpara">Mobile-first design</p>
+    </div>
+    <div>
+        <h4 class="skillname">System-UI</h4>
+        <p class="skillpara">Clean, modern interfaces</p>
+    </div>
+</div>
+
+<h2 id="project">Projects</h2>
+<div class="projects">
+    <div>
+        <h4 class="projecthead">Landing Page</h4>
+        <p class="projectpara">Minimal cyber-style landing page built with pure HTML & CSS.</p>
+    </div>
+    <div>
+        <h4 class="projecthead">Portfolio</h4>
+        <p class="projectpara">Personal portfolio showcasing skills and projects.</p>
+    </div>
+    <div>
+        <h4 class="projecthead">Dashboard UI</h4>
+        <p class="projectpara">Dark-mode dashboard concept with neon accents.</p>
+    </div>
+</div>
+
+<h2 id="contact">Contact</h2>
+<div class="work">Want to work together? Let’s talk.</div>
+<div class="options">
+    <div class="email">Email Me</div>
+    <div class="GitHub">GitHub</div>
+</div>
+
+<div class="end">© 2026 • Cyber Intro Page</div>
+</body>
+
+</html>
